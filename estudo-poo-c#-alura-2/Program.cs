@@ -13,5 +13,7 @@ musica2.duracao = 300;
 musica2.disponivel = false;
 
 
-Console.WriteLine("A música 1 está " + musica1.disponivel + " - " + "E o nome da música 2 é" + musica2.nome);
+musica1.ExibirFichaTecnica();
+Console.WriteLine(" ");
+musica2.ExibirFichaTecnica();
 
