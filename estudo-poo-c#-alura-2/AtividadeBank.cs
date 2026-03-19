@@ -82,102 +82,109 @@ using System.Runtime.InteropServices.Java;
 
 
 
-class Program  //Preciso criar e instanciar um objeto da classe Carro dentro da Main para chamar os métodos de acelerar, frear e buzinar. E também exibir as informações do carro usando o método ExibirInformacoes().
-{
-
-    static void Main()
-    { 
-    Carro meuCarro = new Carro();
-
-        meuCarro.ExibirInformacoes();
-        Console.WriteLine("");
-        meuCarro.Acelerar();
-        Console.WriteLine("");
-        meuCarro.Frear();
-        Console.WriteLine("");
-        meuCarro.Buzinar();
-
-
-    }
-
-
-
-
-}
 
 
 
 
 
+// PROGRAMA DE CARRO COM MÉTODOS DE ACELERAR, FREAR E BUZINAR, E EXIBIR AS INFORMAÇÕES DO CARRO.
+
+//class Program  //Preciso criar e instanciar um objeto da classe Carro dentro da Main para chamar os métodos de acelerar, frear e buzinar. E também exibir as informações do carro usando o método ExibirInformacoes().
+//{
+
+//    static void Main()
+//    { 
+//    Carro meuCarro = new Carro();
+
+//        meuCarro.ExibirInformacoes();
+//        Console.WriteLine("");
+//        meuCarro.Acelerar();
+//        Console.WriteLine("");
+//        meuCarro.Buzinar();
+//        Console.WriteLine("");
+//        meuCarro.Frear();
+        
 
 
-class Carro
-{
-    public string fabricante = "Ford";
-    public string modelo = "Bronco";
-    public int ano = 2020;
-    public int velocidade = 0;
-
-    public void ExibirInformacoes()
-    {
-
-        Console.WriteLine($"informações do carro: {fabricante}, {modelo}, {ano}");
+//    }
 
 
-    }
+
+
+//}
+
+
+
+
+
+//class Carro
+//{
+//    public string fabricante = "Ford";
+//    public string modelo = "Bronco";
+//    public int ano = 2020;
+//    public int velocidade = 0;
+
+//    public void ExibirInformacoes()
+//    {
+
+//        Console.WriteLine($"informações do carro: {fabricante}, {modelo}, {ano}");
+
+
+//    }
 
 
    
-    public void Acelerar() 
-    {
-        if (velocidade < 5)
-        {
-            velocidade++;
-            velocidade++;
-            velocidade++;
-            velocidade++;
-            velocidade++;
+//    public void Acelerar() 
+//    {
+//        if (velocidade < 5)
+//        {
+//            velocidade++;
+//            velocidade++;
+//            velocidade++;
+//            velocidade++;
+//            velocidade++;
             
-            Console.WriteLine($"Acelerando, velocidade agora é {velocidade}");
-            return;
-        }
-        Console.WriteLine();
-        Console.WriteLine("Velocidade máxima atingida!");
-    }
+//            Console.WriteLine($"Acelerando, velocidade agora é {velocidade}");
+//            return;
+//        }
+//        Console.WriteLine();
+//        Console.WriteLine("Velocidade máxima atingida!");
+//    }
 
 
+//    public void Buzinar()
+//    {
+//        if (velocidade == 5)
+//        {
+
+//            Console.WriteLine("buzinando:BEEP BEEP!");
+
+//        }
+
+//    }
+
+
+//    public void Frear()
+//    {
+//        if (velocidade == 5)
+//        {
+//            velocidade--;
+//            velocidade--;
+//            velocidade--;
+//            velocidade--;
+//            velocidade--;
+//            Console.WriteLine("Freando... Velocidade agora é 0");
+
+//        }
+
+//    }
     
 
-
-    public void Frear()
-    {
-        if (velocidade == 5)
-        {
-            Console.WriteLine("Freando, velocidade agora é 0");
-
-        }
-
-    }
+//}
 
 
 
-    public void Buzinar()
-    {
-        if (velocidade == 5)
-        {
 
-            Console.WriteLine("buzinando:BEEP BEEP!");
-
-        }
-
-    }
-
-
-    
-
-    
-
-}
 
 
 
