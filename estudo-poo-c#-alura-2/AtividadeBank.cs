@@ -1,7 +1,9 @@
 ﻿
 using System;
 using System.Data;
+using System.IO.Pipes;
 using System.Runtime.InteropServices.Java;
+using System.Security.Cryptography.X509Certificates;
 
 
 
@@ -103,7 +105,7 @@ using System.Runtime.InteropServices.Java;
 //        meuCarro.Buzinar();
 //        Console.WriteLine("");
 //        meuCarro.Frear();
-        
+
 
 
 //    }
@@ -133,7 +135,7 @@ using System.Runtime.InteropServices.Java;
 //    }
 
 
-   
+
 //    public void Acelerar() 
 //    {
 //        if (velocidade < 5)
@@ -143,7 +145,7 @@ using System.Runtime.InteropServices.Java;
 //            velocidade++;
 //            velocidade++;
 //            velocidade++;
-            
+
 //            Console.WriteLine($"Acelerando, velocidade agora é {velocidade}");
 //            return;
 //        }
@@ -178,8 +180,89 @@ using System.Runtime.InteropServices.Java;
 //        }
 
 //    }
-    
 
+
+//}
+
+
+
+// 1. CRIANDO UMA CLASSE CHAMADA CONTA:
+
+//class Conta
+//{
+//    public string Titular { get; set; }
+//    public int NumeroDaConta { get; set; }
+//    public string NumeroCpf { get; set; }
+
+
+//    public void ExibirInformacoes()
+//    {
+//        Console.WriteLine($" O titular da conta é " +
+//            $"{Titular}, o número da conta é {NumeroDaConta} e o CPF dele é {NumeroCpf} ");
+//    }
+//}
+
+
+//class Program
+//{
+
+//    static void Main()
+//    {
+//        Conta conta1 = new Conta();
+//        conta1.Titular = "Maria Silva";
+//        conta1.NumeroDaConta = 121212;
+//        conta1.NumeroCpf = "1234-56789";
+//        conta1.ExibirInformacoes();
+
+
+
+//    }
+
+//}
+
+
+
+
+// 2. REESCREVER OS ATRIBUTOS DA CLASSE CARRO SENDO PROPERTIES E ADICIONAR
+// UMA NOVA PROPERTIE DescricaoDetalhada, QUE MOSTRA O FABRICANTE , MODELO E ANO DO CARRO
+
+
+
+
+//class Carro
+//{
+//    public string Fabricante { get; set; }
+//    public string Modelo { get; set; }
+//    public int Ano { get; set; }
+//    public string DescricaoDetalhada
+//    {
+//        get
+//        {
+//            return $"O carro é um {Modelo}, da Fabricante {Fabricante} do ano de {Ano}";
+//        }
+
+
+
+//    }
+
+
+//    class Program
+
+//    {
+//        static void Main()
+//        {
+//            Carro carro1 = new Carro();
+//            carro1.Fabricante = "Ford";
+//            carro1.Modelo = "Bronco";
+//            carro1.Ano = 2020;
+//            Console.WriteLine(carro1.DescricaoDetalhada);
+
+
+//        }
+
+
+
+//    }
 //}
 
 
@@ -187,11 +270,46 @@ using System.Runtime.InteropServices.Java;
 
 
 
+//3. REESCREVER A PROPRIEDADE ANO DA CLASSE CARRO PARA QUE ELA APENAS ACEITE VALORES ENTRE 1960 E 2023
+
+class Carro
+{
+    private int ano { get; set; }
+    public string Fabricante { get; set; }
+    public string Modelo { get; set; }
+    public int Ano
+    {
+        get => ano;
+        set 
+        {
+            if (value < 1960 || value > 2023)
+            {
+                Console.WriteLine(" Valor inválido, digite uma data válida.");
 
 
+            }
+            else 
+            {
+                ano = value;
+            
+            }
+        
+        }
+    
+    }
 
 
+}
 
+class Program
+{
+    static void Main()
+    {
+        Carro carro1 = new Carro();
+        carro1.Fabricante = "Ford";
+        carro1.Modelo = "bronco";
+        carro1.Ano = 1950;
+        Console.WriteLine($"{carro1.Ano}");
 
-
-
+    }
+}
