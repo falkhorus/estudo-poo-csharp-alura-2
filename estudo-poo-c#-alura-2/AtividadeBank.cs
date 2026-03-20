@@ -1,4 +1,4 @@
-﻿
+﻿using Microsoft.VisualBasic;
 using System;
 using System.Data;
 using System.IO.Pipes;
@@ -114,10 +114,6 @@ using System.Security.Cryptography.X509Certificates;
 
 
 //}
-
-
-
-
 
 //class Carro
 //{
@@ -272,44 +268,107 @@ using System.Security.Cryptography.X509Certificates;
 
 //3. REESCREVER A PROPRIEDADE ANO DA CLASSE CARRO PARA QUE ELA APENAS ACEITE VALORES ENTRE 1960 E 2023
 
-class Carro
-{
-    private int ano { get; set; }
-    public string Fabricante { get; set; }
-    public string Modelo { get; set; }
-    public int Ano
-    {
-        get => ano;
-        set 
-        {
-            if (value < 1960 || value > 2023)
-            {
-                Console.WriteLine(" Valor inválido, digite uma data válida.");
+//class Carro
+//{
+//    private int ano { get; set; }
+//    public string Fabricante { get; set; }
+//    public string Modelo { get; set; }
+//    public int Ano
+//    {
+//        get => ano;
+//        set 
+//        {
+//            if (value < 1960 || value > 2023)
+//            {
+//                Console.WriteLine(" Valor inválido, digite uma data válida.");
 
 
-            }
-            else 
-            {
-                ano = value;
+//            }
+//            else 
+//            {
+//                ano = value;
             
-            }
+//            }
         
-        }
+//        }
     
+//    }
+
+
+//}
+
+//class Program
+//{
+//    static void Main()
+//    {
+//        Carro carro1 = new Carro();
+//        carro1.Fabricante = "Ford";
+//        carro1.Modelo = "bronco";
+//        carro1.Ano = 1950;
+//        Console.WriteLine($"{carro1.Ano}");
+
+//    }
+//}
+
+
+
+//4. DESENVOLVER A CLASSE PRODUTO COM OS ATRIBUTOS NOME, MARCA, PRECO E ESTOQUE. ALÉM DISSO, GARANTIR QUE O PREÇO E O ESTOQUE DO PRODUTO
+//    SEJAM VALORES POSITIVOS E CRIAR UMA PROPRIEDADE QUE MOSTRA DETALHADAMENTE AS INFORMAÇÕES DO PRODUTO.
+
+class Produto
+{
+    public string Nome { get; set; }
+    public string Marca { get; set; }
+
+    private int preco;
+    public int Preco
+    {
+        get => preco;
+        set
+        {
+            if (value < 0) 
+            {
+                Console.WriteLine("O preço não pode ser menor que zero, digite um valor válido.");
+                return;
+            }
+            preco = value; 
+        }
     }
 
+    private int estoque;
+    public int Estoque
+    {
+        get => estoque;
+        set
+        {
+            if (value < 0)
+            {
+                Console.WriteLine("O estoque não pode ser menor que zero, digite um valor válido.");
+                return;
+            }
+            estoque = value;
+        }
+    }
 
+    public string DetalhesDoProduto
+    {
+        get
+        {
+            return $"O produto é {Nome}, da marca {Marca} e custa R${Preco}. No momento possuímos {Estoque} unidades em estoque. ";
+        }
+    }
 }
+
 
 class Program
 {
     static void Main()
     {
-        Carro carro1 = new Carro();
-        carro1.Fabricante = "Ford";
-        carro1.Modelo = "bronco";
-        carro1.Ano = 1950;
-        Console.WriteLine($"{carro1.Ano}");
-
+        Produto escova = new Produto();
+        escova.Nome = "Escova de Dente";
+        escova.Marca = "Colgate";
+        escova.Preco = -10;
+        escova.Estoque = -50;
+        Console.WriteLine($"{escova.DetalhesDoProduto}");
     }
 }
