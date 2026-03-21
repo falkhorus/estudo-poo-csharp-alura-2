@@ -1,21 +1,15 @@
 ﻿
-//Musica musica1 = new Musica();
-//musica1.Nome = "Mulher de fases";
-//musica1.Artista = "Raimundos";
-//musica1.Duracao = 370;
-//musica1.Disponivel = true;
+Album albumDoQueen = new Album();         // Eu escrevo Album porque é o nome da classe, e o nome da variável é albumDoQueen, com letra minúscula. O nome da variável pode ser qualquer coisa, mas é comum usar um nome que indique o conteúdo ou a função da variável. Neste caso, eu escolhi albumDoQueen para indicar que é um álbum do Queen.
+albumDoQueen.Nome = "A night at the opera";
 
+Musica musica1 = new Musica();
+musica1.Nome = "Love of my life";
+musica1.Duracao = 213;
 
+Musica musica2 = new Musica();
+musica2.Nome = "Bohemian Rhaspody";
+musica2.Duracao = 354;
 
-//Musica musica2 = new Musica();
-//musica2.Nome = "Pescador de ilusões";
-//musica2.Artista = "O Rappa";
-//musica2.Duracao = 300;
-//musica2.Disponivel = false;
-
-
-//Console.WriteLine(musica1.DescricaoResumida);
-//musica1.ExibirFichaTecnica();
-//Console.WriteLine(" ");
-//musica2.ExibirFichaTecnica();
-
+albumDoQueen.AdicionarMusica(musica1);
+albumDoQueen.AdicionarMusica(musica2);
+albumDoQueen.ExibirMusicasDoAlbum();
