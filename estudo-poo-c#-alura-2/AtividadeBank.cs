@@ -380,3 +380,64 @@ using System.Security.Cryptography.X509Certificates;
 
 
 
+
+
+
+
+//ATIVIDADE: Modelar uma classe Conta, que tenha como atributos uma classe Titular, além de informações da conta, como agência, número da conta,
+//    saldo e limite, bem como um método que devolva as informações da conta de forma detalhada.
+
+
+class Titular
+{
+    public string Nome { get; set; }
+    public string Cpf { get; set; }
+    public int Idade { get; set; }
+
+
+}
+
+
+class Conta
+{
+    public Titular TitularDaConta { get; set; }
+    public string Agencia { get; set; }
+    public string NumeroDaConta { get; set; }
+    public double Saldo { get; set; }         // usei double porque o saldo pode conter valores decimais, como R$ 1000,50 por exemplo. O tipo double é adequado para representar valores monetários, pois ele tem uma boa precisão e pode armazenar números com casas decimais.
+    public double Limite { get; set; }
+
+    public void ExibirDetalhes()
+    {
+        Console.WriteLine($"O titular da conta é {TitularDaConta.Nome}, com o CPF {TitularDaConta.Cpf} e de idade {TitularDaConta.Idade}\n");
+        Console.WriteLine($"A agência é {Agencia} e o número da conta é {NumeroDaConta}, com saldo de R$ {Saldo} e limite de R$ {Limite}. ");
+    }
+
+
+    
+
+}   
+
+class Program
+{
+    static void Main()
+    {
+        Titular titular1 = new Titular();
+        titular1.Nome = "Maria Silveira";
+        titular1.Cpf = "123.456.789-00";
+        titular1.Idade = 30;
+
+
+
+        Conta conta1 = new Conta();
+        conta1.Agencia = "1234";
+        conta1.NumeroDaConta = "56789-0";
+        conta1.Saldo = 1000.50;
+        conta1.Limite = 500.00;
+
+        conta1.TitularDaConta = titular1;           // associando o titular à conta.
+        conta1.ExibirDetalhes();
+
+        
+    }
+
+}
